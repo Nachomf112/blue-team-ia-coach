@@ -33,3 +33,9 @@ Los ficheros generados se guardan automáticamente en la carpeta `playbooks/` co
 
    ```bash
    python -m coach.main
+
+### Ejemplo de salida
+
+Puedes ver un ejemplo real de playbook exportado en Markdown aquí:
+
+- [Ejemplo de playbook para PowerShell sospechoso en endpoint](playbooks/ejemplo_powershell_endpoint.md)
