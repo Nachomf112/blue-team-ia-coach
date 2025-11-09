@@ -27,6 +27,8 @@ python -m coach.main
 A partir de la versión **0.2**, la herramienta permite guardar el playbook en un fichero `.md`
 para documentar mejor el incidente o pegarlo en un ticket del SOC.
 
+Los ficheros generados se guardan automáticamente en la carpeta `playbooks/` con nombres tipo `playbook_<id_alerta>_<fecha>.md`.
+
 1. Ejecuta la herramienta:
 
    ```bash
