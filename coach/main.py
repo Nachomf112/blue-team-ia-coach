@@ -8,6 +8,7 @@ Ahora permite exportar el playbook a un fichero Markdown.
 
 from datetime import datetime
 from textwrap import dedent
+import os
 
 ALERTS = {
     "1": {
@@ -102,12 +103,20 @@ def build_playbook_text(alert_key: str) -> str:
 
 
 def maybe_export_to_file(text: str, alert_key: str) -> None:
-    answer = input("\n¿Quieres guardar este playbook en un fichero .md? (s/n): ").strip().lower()
+    answer = input(
+        "\n¿Quieres guardar este playbook en un fichero .md? (s/n): "
+    ).strip().lower()
+
     if answer not in ("s", "si", "sí"):
         return
 
-    now = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
-    filename = f"playbook_{alert_key}_{now}.md"
+    # Crear carpeta playbooks si no existe
+    os.makedirs("playbooks", exist_ok=True)
+
+    # Timestamp legible
+    now = datetime.now().strftime("%Y%m%d-%H%M")
+    filename = f"playbooks/playbook_{alert_key}_{now}.md"
+
     try:
         with open(filename, "w", encoding="utf-8") as f:
             f.write("# Blue Team IA Coach\n\n")
