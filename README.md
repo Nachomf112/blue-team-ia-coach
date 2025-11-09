@@ -21,3 +21,13 @@ Ayuda a investigar alertas típicas de Blue Team ofreciendo:
 
 ```bash
 python -m coach.main
+
+## Exportar playbook a Markdown
+
+A partir de la versión **0.2**, la herramienta permite guardar el playbook en un fichero `.md`
+para documentar mejor el incidente o pegarlo en un ticket del SOC.
+
+1. Ejecuta la herramienta:
+
+   ```bash
+   python -m coach.main
